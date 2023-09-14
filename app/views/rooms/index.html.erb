@@ -1,0 +1,13 @@
+<%= @rooms.count%>件が見つかりました。
+
+    <% @rooms.each do |room| %>
+        <table>
+            <tr>
+                <td><%= image_tag room.image_url.to_s %></td>
+                <td><%= room.facility_name %></td>
+                <td><%= room.address %></td>
+                <td><%= room.detail %></td>
+                <td><%= room.price %></td>
+            </tr>
+        </table>
+    <% end %>

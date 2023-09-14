@@ -8,8 +8,8 @@
         </tr>
 
         <tr>
-            <th><%= f.label :facility_detail, "施設詳細" %></th>
-            <td><%= f.text_area :facility_detail %></td>
+            <th><%= f.label :detail, "施設詳細" %></th>
+            <td><%= f.text_area :detail %></td>
         </tr>
 
         <tr>
@@ -23,13 +23,16 @@
         </tr>
 
         <tr>
-            <th><%= f.label :image2, "画像" %></th>
-            <td><%= f.file_field :image2 %></td>
+            <th><%= f.label :image, "画像" %></th>
+            <td><%= f.file_field :image %></td>
         </tr>
     </table>
 
 
     <div>
-        <p><%= f.submit "保存"%></p>
+        <ul>
+            <li><%= f.submit "保存" %></li>
+            <li><%= link_to"キャンセル", :back %></li>
+        </ul>
     </div>
 <% end %>

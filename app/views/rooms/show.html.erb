@@ -1,0 +1,13 @@
+<%= link_to "戻る", :rooms %>
+    <table>
+        <tr>
+            <td><%= image_tag @room.image.to_s %></td>
+        </tr>
+
+        <tr>
+            <th><%= @room.facility_name %></th>
+            <td>¥<%= @room.price %></td>
+            <td><%= @room.address %></td>
+            <td><%= @room.detail %></td>
+        </tr>
+    </table>
