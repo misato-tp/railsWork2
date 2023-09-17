@@ -7,7 +7,8 @@
                 <td><%= room.facility_name %></td>
                 <td><%= room.address %></td>
                 <td><%= room.detail %></td>
-                <td><%= room.price %></td>
+                <td>¥<%= room.price %></td>
+                <td><%= link_to "詳細はこちら",room %></td>
             </tr>
         </table>
     <% end %>

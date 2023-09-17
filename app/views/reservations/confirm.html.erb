@@ -1,0 +1,34 @@
+<h1>予約内容の確認</h1>
+
+    <% form_with model:@reservation do |reservation| %>
+        
+      <table>  
+        <tr>
+            <th>チェックイン</th>
+            <td><%= @reservation.start_date %></td>
+        </tr>
+
+        <tr>
+            <th>チェックアウト</th>
+            <td><%= @reservation.end_date %></td>
+        </tr>
+
+        <tr>
+            <th>日数</th>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th>人数</th>
+            <td><%= @reservation.how_many_people %></td>
+        </tr>
+
+        <tr>
+            <th>お支払い金額</th>
+            <td></td>
+        </tr>
+
+        <tr>上記内容で正しければ「確定」ボタンを押してください。</tr>
+
+      </table>
+    <% end %>

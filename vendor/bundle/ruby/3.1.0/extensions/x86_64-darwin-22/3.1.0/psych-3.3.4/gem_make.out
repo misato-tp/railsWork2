@@ -1,0 +1,21 @@
+current directory: /Users/user/Desktop/schedule/railsWork2/trip/vendor/bundle/ruby/3.1.0/gems/psych-3.3.4/ext/psych
+/Users/user/.rbenv/versions/3.1.4/bin/ruby -I /Users/user/.rbenv/versions/3.1.4/lib/ruby/3.1.0 extconf.rb
+checking for yaml.h... yes
+checking for yaml_get_version() in -lyaml... yes
+creating Makefile
+
+current directory: /Users/user/Desktop/schedule/railsWork2/trip/vendor/bundle/ruby/3.1.0/gems/psych-3.3.4/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20230914-52797-nitsfo sitelibdir\=./.gem.20230914-52797-nitsfo clean
+
+current directory: /Users/user/Desktop/schedule/railsWork2/trip/vendor/bundle/ruby/3.1.0/gems/psych-3.3.4/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20230914-52797-nitsfo sitelibdir\=./.gem.20230914-52797-nitsfo
+compiling psych.c
+compiling psych_emitter.c
+compiling psych_parser.c
+compiling psych_to_ruby.c
+compiling psych_yaml_tree.c
+linking shared-object psych.bundle
+
+current directory: /Users/user/Desktop/schedule/railsWork2/trip/vendor/bundle/ruby/3.1.0/gems/psych-3.3.4/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20230914-52797-nitsfo sitelibdir\=./.gem.20230914-52797-nitsfo install
+/usr/bin/install -c -m 0755 psych.bundle ./.gem.20230914-52797-nitsfo

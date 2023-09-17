@@ -19,10 +19,9 @@ class RoomsController < ApplicationController
     else
       render :new
     end
+  end  
 
-    def edit
-    end
-    
+  def edit
   end
 
 end
