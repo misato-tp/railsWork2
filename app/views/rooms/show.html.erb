@@ -10,9 +10,10 @@
             <td><%= @room.address %></td>
             <td><%= @room.detail %></td>
         </tr>
+    </table>
 
-        <tr>
-            <%= form_with model: Reservation.new, url: confirm_reservations_path(@reservation) do |f| %>
+        <%= form_with method: :post, url:confirm_reservations_path do |f| %>
+            <table>
                 <th><%= f.label :start_date,"チェックイン" %></th>
                 <td><%= f.date_field :start_date %></td>
                 <th><%= f.label :end_date,"チェックアウト"%></th>
@@ -20,7 +21,7 @@
                 <th><%= f.label :how_many_people,"人数"%></th>
                 <td><%= f.number_field :how_many_people %></td>
                 <td><%= f.submit "予約する" %></td>
-            <% end %>
-        </tr>
+            </table>
+        <% end %>
 
-    </table>
+

@@ -11,9 +11,7 @@ class ReservationsController < ApplicationController
   end
 
   def confirm
-    @reservation = Reservation.new(params.require(:reservation).permit(:start_date, :end_date, :how_many_people,:total_days))
-  
-    @reservation.save
+    @reservation = Reservation.new
   end
 
   def show
