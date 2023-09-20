@@ -6,23 +6,36 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      <h1>Potepan Share</h1>
-      <nav>
-        <% if user_signed_in? %>
-          <strong><%= link_to current_user.name %></strong>
-          <%= link_to "プロフィール変更", edit_user_registration_path %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "新規登録", new_user_registration_path %>
-          <%= link_to "ログイン", new_user_session_path %>
-        <% end %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <nav class="navbar navbar-dark bg-dark d-flex justify-content-end flex-nowrap">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="/"><h3>Potepan Share</h3></a>
+      </div>
+          <% if user_signed_in? %>
+              <li class="nav-item dropdown" style="list-style: none" >
+                <a class="nav-link dropdown-toggle bg-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                  <strong><%= current_user.name %></strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/rooms/new">施設の新規予約</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">予約済み一覧</a></li>
+                  <li><a class="dropdown-item" href="#">登録済み一覧</a></li>
+                  <li><a class="dropdown-item" href="/users/edit">アカウント設定</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/users/sign_out">ログアウト</a></li>
+                </ul>
+              </li>
+          <% end %>
       </nav>
+
     </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

@@ -1,0 +1,20 @@
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+div {
+    position: relative; /*relativeにすることで、pの文字に対する基準になる*/
+}
+
+img {
+    width: 100%;
+    filter: brightness(70%); /*背景画像暗くするやつ*/
+}
+
+p{
+    color:white;
+    position: absolute;
+    font-size: 60px;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-50%);
+}
