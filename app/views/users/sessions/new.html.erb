@@ -10,10 +10,12 @@
     <%= f.label :password,"パスワード" %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
-
+  <br>
   <div class="actions">
     <%= f.submit "ログイン" %>
   </div>
+  <div class="actions">
+    <%= render "users/shared/links" %>
+  </div>
 <% end %>
 
-<%= render "users/shared/links" %>

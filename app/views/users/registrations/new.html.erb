@@ -9,26 +9,26 @@
   </div>
 
   <div class="field">
-    <%= f.label :email,"メールアドレス" %><br />
+    <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password,"パスワード" %>
+    <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %>文字以上で入力して下さい。)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation,"確認用パスワード" %><br />
+    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
+  <br>
   <div class="actions">
     <%= f.submit "新しいアカウントを作成" %>
   </div>
 <% end %>
-
+  <br>
 <%= render "users/shared/links" %>
