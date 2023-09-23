@@ -1,24 +1,24 @@
 <h1>予約内容の確認</h1>
 
-    <% form_with model:@reservation do |f| %>
-        
-      <table>  
-        <tr>
-            <th><%= f.label :start_date,"チェックイン" %></th>
-            <td><%= @reservation.start_date %></td>
-        </tr>
+<% form_with model:@reservation, url: reservations_path do |f| %>
+  <tr>チェックイン</tr>
+  <td><%= f.hidden_field :start_date %></td>
 
-        <tr>
-            <th><%= f.label :end_date, "チェックアウト" %></th>
-            <td><%= @reservation.end_date %></td>
-        </tr>
+  <tr>チェックアウト</tr>
+  <td><%= f.hidden_field :end_date %></td>
 
-        <tr>
-            <th><%= f.label :how_many_people, "人数" %></th>
-            <td><%= @reservation.how_many_people %></td>
-        </tr>
+  <tr>人数</tr>
+  <td><%= f.hidden_field :how_many_people %></td>
 
-        <tr>上記内容で正しければ「確定」ボタンを押してください。</tr>
+  <tr>宿泊日数</tr>
+  <td><%= f.hidden_field :total_days %></td>
 
-      </table>
-    <% end %>
+  <tr>合計金額</tr>
+  <td><%= f.hidden_field :total_price %></td>
+
+  <tr>id</tr>
+  <td><%= f.hidden_field :user_id %></td>
+
+  上記内容で正しければ「確定」ボタンを押してください。
+  <%= f.submit "確定" %>
+<% end %>

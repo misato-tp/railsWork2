@@ -11,10 +11,15 @@ class ReservationsController < ApplicationController
   end
 
   def confirm
-    @reservation = Reservation.new
+    @reservation = Reservation.new(reservation_params)
+    render :confirm
   end
+end
 
-  def show
-  
-  end
+def reservation_params
+    params.permit(
+      :start_date,
+      :end_date,
+      :how_many_people
+    )
 end
