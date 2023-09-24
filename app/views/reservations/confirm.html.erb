@@ -2,26 +2,33 @@
 
 <%= form_with model:@reservation, url: reservations_path do |f| %>
   <tr>チェックイン</tr>
-  <td><%= @reservation.start_date %></td>
+  <td><%= @reservation.start_date.to_s(:datetime_jp) %></td>
   <td><%= f.hidden_field :start_date %></td>
   <br>
   <tr>チェックアウト</tr>
-  <td><%= @reservation.end_date %></td>
+  <td><%= @reservation.end_date.to_s(:datetime_jp) %></td>
   <td><%= f.hidden_field :end_date %></td>
   <br>
   <tr>人数</tr>
-  <td><%= @reservation.how_many_people %></td>
+  <td><%= @reservation.how_many_people %>人</td>
   <td><%= f.hidden_field :how_many_people %></td>
   <br>
   <tr>宿泊日数</tr>
-  <td><%= @reservation.total_days = (@reservation.end_date - @reservation.start_date)/86400 %></td> 
-  <td><%= f.hidden_field :total_days %></td>
+  <td><%= @reservation.total_days = (@reservation.end_date - @reservation.start_date).div 86400 %></td> 
+  <td><%= f.hidden_field :total_days %>日</td>
   <br>
   <tr>合計金額</tr>
-  <td><%= @reservation.total_price = ((@reservation.total_days + @reservation.how_many_people ) * @rooms.price) %></td>
+  <td>¥<%= @reservation.total_price = (((@reservation.total_days-1) + @reservation.how_many_people ) * @room[0]['price']) %></td>
   <td><%= f.hidden_field :total_price %></td>
   <br>
+  <%= f.hidden_field :image, value: @room[0]['image'] %>
+  <%= f.hidden_field :room, value: @room[0]['id'] %>
+  <%= f.hidden_field :detail, value: @room[0]['detail'] %>
+  <%= f.hidden_field :facility_name, value: @room[0]['facility_name']%>
 
   上記内容で正しければ「確定」ボタンを押してください。
+  <br>
   <%= f.submit "確定" %>
+  <br>
+  <%= link_to "キャンセル", :back %> 
 <% end %>
