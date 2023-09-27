@@ -1,4 +1,4 @@
 class Reservation < ApplicationRecord
     mount_uploader :image, ImageUploader
-    has_many :rooms
+    belongs_to :room, optional: true
 end

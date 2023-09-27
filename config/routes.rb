@@ -2,8 +2,13 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :rooms 
   devise_for :users
+  
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
   resources :reservations do
-    member do
+    collection do
       post 'confirm'
     end
   end

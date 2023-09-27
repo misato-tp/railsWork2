@@ -13,16 +13,13 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(params.require(:room).permit(:facility_name, :detail, :price, :address, :image))
-    binding.pry
     @room.id = current_user.id
-    binding.pry
-    @room.save
-    binding.pry
+    @room.save!
     redirect_to room_path(@room)
-    binding.pry
   end  
 
   def edit
   end
+
 
 end
