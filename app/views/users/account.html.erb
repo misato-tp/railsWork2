@@ -1,2 +1,24 @@
-<h1>Users#account</h1>
-<p>Find me in app/views/users/account.html.erb</p>
+<div class="all">
+        <%= render "shared/account-settings"%>
+
+    <div class="account-info">
+        <div class="border-bottom">
+            <h3>アカウント</h3>
+            <h3><%= link_to "編集", href="/users/edit" %></h3>
+        </div>
+
+        <table class="table">
+                <th scope="row">メールアドレス</th>
+                <td><%= current_user.email %></td>
+            <tbody>
+                <th scope="row">パスワード</th>
+                <td>******</td>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+    

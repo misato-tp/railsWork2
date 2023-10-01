@@ -1,0 +1,24 @@
+<%= render "shared/account-settings"%>
+    <div class="border-bottom">
+        <h3>プロフィール</h3>
+        <h3><%= link_to "編集", href="/users/profile/edit" %></h3>
+    </div>
+
+    <table class="table">
+    <tr>
+    <th scope="row">アイコン</th>
+        <td><%= image_tag current_user.icon.url, class: 'rounded-circle', size:'50x50' %></td>
+    </tr>
+
+    <tr>
+    <th>名前</th>
+    <td><%= current_user.name %></td>
+    </tr>
+
+    <tr>
+    <th>自己紹介</th>
+    <td><%= current_user.introduce %></td>
+    </tr>
+
+    </table>
+

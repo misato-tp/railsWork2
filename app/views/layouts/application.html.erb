@@ -28,8 +28,8 @@
             <li><a class="dropdown-item" href="/rooms/new">施設の新規予約</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/reservations">予約済み一覧</a></li>
-            <li><a class="dropdown-item" href="#">登録済み一覧</a></li>
-            <li><a class="dropdown-item" href="/users/edit">アカウント設定</a></li>
+            <li><a class="dropdown-item" href="rooms/own">登録済み一覧</a></li>
+            <li><a class="dropdown-item" href="/users/account">アカウント設定</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/users/sign_out">ログアウト</a></li>
           </ul>
@@ -39,10 +39,9 @@
         <a href= "/users/sign_up" button type="button" class="text-decoration-none btn btn-danger text-nowrap">新規登録</a>
       <% end %>
     </nav>
-
     </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    
+    <%= render "shared/flash_message" %>
 
     <%= yield %>
     <footer>

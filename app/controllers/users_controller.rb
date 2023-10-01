@@ -1,8 +1,23 @@
 class UsersController < ApplicationController
-  def account
+
+  def update
+    if @user.update(user_params)
+      redirect_to :profile
+    else
+      render :edit
+    end
   end
 
-  def sign_in
-    
+  def profile
+    if @user.update
+      redirect_to :profile
+    else
+      render "edit"
+    end
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:user_name, :email, :icon, :introduce)
   end
 end

@@ -1,7 +1,21 @@
 Rails.application.routes.draw do
   root 'top#index'
-  resources :rooms 
-  devise_for :users
+  resources :rooms do
+    collection do
+      get 'own'
+    end
+  end
+
+  devise_for :users 
+
+  resources :users do
+    collection do
+      get 'account'
+      get 'profile' do
+        get'edit'
+      end
+    end
+  end
   
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
