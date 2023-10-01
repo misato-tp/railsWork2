@@ -12,7 +12,7 @@
         </tr>
     </tbody>
 
-    <%= form_with model: @reservation, url: confirm_reservations_url do |f| %>
+    <%= form_with model: @reservation, url: confirm_reservations_url(@room) do |f| %>
         <table>
             <th><%= f.label :start_date,"チェックイン" %></th>
             <td><%= f.date_field :start_date %></td>
