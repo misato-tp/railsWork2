@@ -1,8 +1,8 @@
 <h1>予約内容の確認</h1>
 
-<%= form_with model:@reservation, url: reservations_confirm_path(@room), do |f| %>
+<%= form_with model:@reservation, url: confirm_reservations_url(@room) do |f| %>
   <%= f.hidden_field :room_id, value: @room.id %>
-  
+
   <tr>チェックイン</tr>
   <td><%= @reservation.start_date.to_s(:datetime_jp) %></td>
   <td><%= f.hidden_field :start_date %></td>

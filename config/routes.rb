@@ -10,9 +10,10 @@ Rails.application.routes.draw do
 
   resources :users do
     collection do
-      get 'account'
-      get 'profile' do
-        get'edit'
+      get 'account' do
+        get 'edit' do
+          get 'profile'
+        end
       end
     end
   end

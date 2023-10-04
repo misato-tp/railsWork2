@@ -10,26 +10,18 @@ class ReservationsController < ApplicationController
 
   def create
     @room = Room.find(params[:id])
-    @reservation = Reservation.new(params.require(:reservation).permit(:start_date, :end_date, :how_many_people, :total_price))
-    @reservation.total_price = @reservation.sum_of_price
+    @reservation = Reservation.new(params.require(:reservation).permit(:start_date, :end_date, :how_many_people, :total_price, :room_id))
   end
 
   def confirm
-  @reservation = Reservation.new(params.require(:reservation).permit(:start_date, :end_date, :how_many_people, :total_price,:total_price, :user_id, :image, :room_id))
-  @room = Room.find(params[:room_id])
-  @reservation.total_days = @reservation.sum_of_days
-  @reservation.total_price = @reservation.sum_of_price
+  @reservation = Reservation.new(params.require(:reservation).permit(:start_date, :end_date, :how_many_people, :total_days, :total_price, :user_id, :image, :room_id, :price))
+  @room = Room.new(params[:room_id])
+  @reservation.total_days = ((@reservation.end_date.to_date)-(@reservation.start_date.to_date)).to_i
+  @reservation.total_price = (@reservation.price)*(@reservation.how_many_people)*(@reservation.total_days).to_i
   @reservation.save
+  redirect_to reservations_path
   end
 
  private
-
-  def sum_of_days
-    (start_date.to_date - end_date.to_date).to_i
-  end
-
-  def sum_of_price
-    (room.price * how_many_people * total_days).to_i
-  end
 
 end

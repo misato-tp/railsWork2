@@ -22,6 +22,7 @@
             <td><%= f.number_field :how_many_people %></td>
             <td><%= f.hidden_field :image, value: @room.image %></td>
             <td><%= f.hidden_field :room_id, value: @room.id %></td>
+            <td><%= f.hidden_field :price, value: @room.price %></td>
             <td><%= f.hidden_field :user_id, value: current_user.id %></td>
             <td><%= f.submit "予約する" %></td>
         </table>
