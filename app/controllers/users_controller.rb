@@ -12,15 +12,18 @@ class UsersController < ApplicationController
     end
   end
 
-  def profile
+  def show
     @users = User.all
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
-  def show
-    @user = User.find(params[:id])
+  def account
+    @users = User.all
   end
+
+  def profile
+  end
+
 end
