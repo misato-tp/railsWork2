@@ -2,6 +2,7 @@
 
 <%= form_with model:@reservation, url: confirm_reservations_url(@room) do |f| %>
   <%= f.hidden_field :room_id, value: @room.id %>
+  <%= f.hidden_field :image, value: @room.image.to_s %>
 
   <tr>チェックイン</tr>
   <td><%= @reservation.start_date.to_s(:datetime_jp) %></td>

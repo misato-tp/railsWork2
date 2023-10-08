@@ -14,9 +14,8 @@
   </thead>
 
   <tbody>
-    <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= reservation.image %></td>
+        <% @reservations.each do |reservation| %>
         <td><%= reservation.facility_name %></td>
         <td><%= reservation.detail %></td>
         <td><%= reservation.total_price %></td>
