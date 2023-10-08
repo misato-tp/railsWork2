@@ -1,6 +1,6 @@
 <h1>予約内容の確認</h1>
 
-<%= form_with model:@reservation, url: confirm_reservations_url(@room) do |f| %>
+<%= form_with model:@reservation do |f| %>
   <%= f.hidden_field :room_id, value: @room.id %>
   <%= f.hidden_field :image, value: @room.image.to_s %>
 
