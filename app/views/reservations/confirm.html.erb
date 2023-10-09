@@ -5,11 +5,11 @@
   <%= f.hidden_field :image, value: @room.image.to_s %>
 
   <tr>チェックイン</tr>
-  <td><%= @reservation.start_date.to_s(:datetime_jp) %></td>
+  <td><%= @reservation.start_date.to_date %></td>
   <td><%= f.hidden_field :start_date %></td>
   <br>
   <tr>チェックアウト</tr>
-  <td><%= @reservation.end_date.to_s(:datetime_jp) %></td>
+  <td><%= @reservation.end_date.to_date %></td>
   <td><%= f.hidden_field :end_date %></td>
   <br>
   <tr>人数</tr>
