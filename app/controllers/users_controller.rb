@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = current_user.id
   end
 
   def account

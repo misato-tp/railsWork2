@@ -8,16 +8,9 @@ Rails.application.routes.draw do
 
   devise_for :users 
 
-  resources :users do
-    collection do
-      post :account
-    end
-    collection do
-      post :profile do
-        get :edit
-      end
-    end
-  end
+    get 'users/account'
+    get 'users/profile'
+    get 'users/profile/edit', to:'users#edit'
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
