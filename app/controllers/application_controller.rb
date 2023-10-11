@@ -6,8 +6,9 @@ class ApplicationController < ActionController::Base
     protected
 
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-        devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:user_name])
+        devise_parameter_sanitizer.permit(:sign_in, keys: [:user_name])
+        devise_parameter_sanitizer.permit(:edit, keys: [:user_name])
     end
 
     def after_sign_out_path_for(resource_or_scope)

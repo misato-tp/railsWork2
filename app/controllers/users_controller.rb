@@ -5,8 +5,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(params[:id])
-      redirect_to profile_users_path
+    @user = User.find(params[:user_id])
+    if current_user.update(params.permit(:icon, :user_name, :introduce))
+      redirect_to users_profile_path
     else
       render :edit
     end
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user.id
+    params.permit(:icon, :user_name, :introduce)
   end
 
   def account
