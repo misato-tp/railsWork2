@@ -1,6 +1,13 @@
 class RoomsController < ApplicationController
+  before_action :set_q, only: [:index, :search]
+
+  def search
+    @results = @q.result
+  end
+
   def index
     @rooms = Room.all
+    @rooms = @q.result(distinct: true)
   end
 
   def new
@@ -17,7 +24,7 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to room_path(@room)
     else
-      redirect_to room_path(@room)
+      render "rooms/new"
     end
   end  
 
@@ -27,4 +34,9 @@ class RoomsController < ApplicationController
   def own
     @rooms = Room.all
   end
+end
+
+private
+def set_q
+  @q = Room.ransack(params[:q])
 end

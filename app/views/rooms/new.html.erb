@@ -14,7 +14,7 @@
 
         <tr>
             <th><%= f.label :price, "料金" %></th>
-            <td><%= f.number_field :price %></td>
+            <td><%= f.number_field :price, min: 1 %></td>
         </tr>
 
         <tr>

@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :reservations
 
   mount_uploader :icon, IconUploader
+  
+  validates :user_name, presence: true
 end

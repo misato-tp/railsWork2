@@ -4,12 +4,16 @@ ja:
         models:
           user:
             attributes:
+              user_name:
+                blank: を入力してください
               password:
                 blank: を入力して下さい
               email:
                 blank: を入力してください
+                taken: はすでに使用されています
     attributes:
       user:
+        user_name: ユーザー名
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :rooms do
     collection do
       get 'own'
+      get 'search'
     end
   end
 
@@ -19,7 +20,8 @@ Rails.application.routes.draw do
 
     get 'reservations', to:'reservations#index'
     post 'reservations', to:'reservations#create'
-    get 'reservations/confirm', to:'reservations#confirm'
+    post 'reservations/confirm', to:'reservations#confirm'
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

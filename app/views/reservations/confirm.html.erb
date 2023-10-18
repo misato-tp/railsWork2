@@ -1,8 +1,6 @@
 <h1>予約内容の確認</h1>
 
 <%= form_with model:@reservation do |f| %>
-  <%= f.hidden_field :room_id, value: @room.id %>
-  <%= f.hidden_field :image, value: @room.image.to_s %>
 
   <tr>チェックイン</tr>
   <td><%= @reservation.start_date.to_date %></td>
@@ -24,6 +22,10 @@
   <td>¥<%= @reservation.total_price %></td>
   <td><%= f.hidden_field :total_price %></td>
   <br>
+  <td><%= f.hidden_field :image.to_s %></td>
+  <td><%= f.hidden_field :facility_name %></td>
+  <td><%= f.hidden_field :detail %></td>
+  <td><%= f.hidden_field :room_id %></td>
 
   上記内容で正しければ「確定」ボタンを押してください。
   <br>

@@ -12,17 +12,19 @@
         </tr>
     </tbody>
 
-    <%= form_with model:@reservation do |f| %>
+    <%= form_with model:@reservation, url:reservations_confirm_path do |f| %>
         <table>
             <th><%= f.label :start_date,"チェックイン" %></th>
             <td><%= f.date_field :start_date %></td>
             <th><%= f.label :end_date,"チェックアウト"%></th>
             <td><%= f.date_field :end_date %></td>
             <th><%= f.label :how_many_people,"人数"%></th>
-            <td><%= f.number_field :how_many_people %></td>
-            <td><%= f.hidden_field :image, value: @room.image %></td>
+            <td><%= f.number_field :how_many_people, min:1 %></td>
+            <td><%= f.hidden_field :image.to_s, value: @room.image.to_s %></td>
             <td><%= f.hidden_field :room_id, value: @room.id %></td>
             <td><%= f.hidden_field :price, value: @room.price %></td>
+            <td><%= f.hidden_field :facility_name, value:@room.facility_name %></td>
+            <td><%= f.hidden_field :detail, value:@room.detail %></td>
             <td><%= f.hidden_field :user_id, value: current_user.id %></td>
             <td><%= f.submit "予約する" %></td>
         </table>

@@ -1,0 +1,28 @@
+.top {
+    background-image:url("<%= asset_path('top-image') %>");
+    height: 600px;
+    background-size:cover;
+    width: 100%;
+}
+
+.top {
+    position: relative; /*relativeにすることで、pの文字に対する基準になる*/
+    filter: brightness(70%); /*背景画像暗くするやつ*/
+}
+
+.title{
+    color:white;
+    position: absolute;
+    font-size: 60px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.search-box{
+    position: absolute;
+    width: 50%;
+    top: 80%;
+    left: 40%;
+    color: white;
+}
