@@ -1,6 +1,6 @@
 <h1>新規登録</h1>
-
 <%= form_with model:@room do |f| %>
+<%= render 'rooms/shared/room_error_messages', model: f.object %>
     <table>
         <tr>
             <th><%= f.label :facility_name, "施設名" %></th> 
@@ -14,7 +14,7 @@
 
         <tr>
             <th><%= f.label :price, "料金" %></th>
-            <td><%= f.number_field :price, min: 1 %></td>
+            <td><%= f.number_field :price %></td>
         </tr>
 
         <tr>

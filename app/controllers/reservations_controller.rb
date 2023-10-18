@@ -15,8 +15,12 @@ class ReservationsController < ApplicationController
 
   def confirm
     @reservation = Reservation.new(reservation_params)
-    @reservation.total_days = ((@reservation.end_date.day) - (@reservation.start_date.day))
-    @reservation.total_price =((@reservation.price) * (@reservation.how_many_people) * (@reservation.total_days)).to_i
+    if @reservation.save!
+      render "rooms/show"
+    else
+      @reservation.total_days = ((@reservation.end_date.day) - (@reservation.start_date.day))
+      @reservation.total_price =((@reservation.price) * (@reservation.how_many_people) * (@reservation.total_days)).to_i
+    end
   end
 
  private

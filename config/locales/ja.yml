@@ -17,4 +17,27 @@ ja:
         default:
   attributes:
     icon: アイコン
+  activerecord:
+    attributes:
+      room:
+        facility_name: 施設名
+        detail: 施設詳細
+        price: 料金
+        address: 住所
+    errors:
+      models:
+        room:
+          attributes:
+            facility_name:
+              blank: は必須項目です
+            detail:
+              blank: は必須項目です
+            price:
+              not_a_number: は数値を入力してください
+              blank: は必須項目です
+              greater_than_or_equal_to: は1円以上で設定してください
+            address:
+              blank: は必須項目です
+
+            
 
