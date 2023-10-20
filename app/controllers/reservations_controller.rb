@@ -15,11 +15,12 @@ class ReservationsController < ApplicationController
 
   def confirm
     @reservation = Reservation.new(reservation_params)
-    if @reservation.save!
-      render "rooms/show"
+
+    if @reservation.save
+      redirect_to reservations_confirm_path
     else
-      @reservation.total_days = ((@reservation.end_date.day) - (@reservation.start_date.day))
-      @reservation.total_price =((@reservation.price) * (@reservation.how_many_people) * (@reservation.total_days)).to_i
+      @room = Room.find(params[:reservation][:room_id])
+      render "rooms/show"
     end
   end
 
