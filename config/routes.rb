@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
     get 'reservations', to:'reservations#index'
     post 'reservations', to:'reservations#create'
-    post 'reservations/confirm', to:'reservations#confirm'
+    post 'reservations/confirm' => 'reservations#confirm'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
