@@ -1,6 +1,6 @@
 <h1>予約内容の確認</h1>
 
-<%= form_with model:@reservation, url:reservations_path do |f| %>
+<%= form_with model:@reservation do |f| %>
 
   <tr>チェックイン</tr>
   <td><%= @reservation.start_date.to_date %></td>
