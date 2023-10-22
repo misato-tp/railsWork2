@@ -24,9 +24,13 @@ ja:
         detail: 施設詳細
         price: 料金
         address: 住所
+      reservation:
+        start_date: チェックイン日
+        end_date: チェックアウト日
+        how_many_people: 人数
     errors:
       models:
-        room:
+        reservation:
           attributes:
             facility_name:
               blank: は必須項目です
@@ -38,6 +42,14 @@ ja:
               greater_than_or_equal_to: は1円以上で設定してください
             address:
               blank: は必須項目です
+            start_date:
+              blank: を入力してください
+            end_date:
+              blank: を入力してください
+            how_many_people:
+              blank: を入力してください
+              greater_than_or_equal_to: は1人以上にしてください
+              not_a_number: を入力してください
 
             
 

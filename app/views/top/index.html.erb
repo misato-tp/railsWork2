@@ -1,6 +1,4 @@
-<div class ="top">
-
-</div>
+<div class ="top"></div>
 
     <p class="title text-center">Potepan Shareで<br>まだ体験したことのない<br>旅をしよう</p>
     <div class="search-box">
@@ -10,5 +8,47 @@
             <%= f.search_field :address_cont%>
             <%= f.submit '検索' %>
         <% end %> 
+        </div>
+    </div>
+    
+    <div class="area">
+        <p class="bg-warning text-white rounded-pill p-5 w-25 h3 text-center">おすすめのエリア</p>
+    </div>
+
+    <div class="search-image">
+        <div class="card text-white" style="width:300px; height:auto">
+            <%= link_to image_tag('tokyo.jpg'),'/rooms?q%5Baddress_cont%5D=東京&commit=検索', size:"300x500"%>
+            <div class="card-img-overlay d-flex">
+                <div class="mt-auto ms-auto">
+                    <h2 class="card-title">東京</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="card text-white" style="width: 300px; height:auto;">
+            <%= link_to image_tag("osaka.jpeg"),'/rooms?q%5Baddress_cont%5D=大阪&commit=検索',size:"300x500" %>
+            <div class="card-img-overlay d-flex">
+                <div class="mt-auto ms-auto">
+                    <h2 class="card-title">大阪</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="card text-white" style="width: 300px; height:auto;">
+            <%= link_to image_tag("kyoto.jpg"),'/rooms?q%5Baddress_cont%5D=京都&commit=検索', size:"300x500" %>
+                <div class="card-img-overlay d-flex">
+                    <div class="mt-auto ms-auto">
+                        <h2 class="card-title">京都</h2>
+                    </div>
+                </div>
+        </div>
+
+        <div class="card text-white" style="width: 300px; height:auto;">
+            <%= link_to image_tag("hokkaido.jpeg"),'/rooms?q%5Baddress_cont%5D=北海道&commit=検索', size:"300x500" %>
+                <div class="card-img-overlay d-flex">
+                    <div class="mt-auto ms-auto">
+                        <h2 class="card-title">北海道</h2>
+                    </div>
+                </div>
         </div>
     </div>
