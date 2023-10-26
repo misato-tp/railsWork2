@@ -2,12 +2,12 @@ class ReservationsController < ApplicationController
   before_action :set_room, only:[:price, :image]
 
   def index
-    @reservations = Reservation.all
+    @reservations = current_user.reservations 
     @rooms = Room.all
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = current_user.reservations.build(reservation_params)
     if @reservation.save
       redirect_to reservations_path
     else
@@ -36,5 +36,4 @@ class ReservationsController < ApplicationController
   def set_room
     @room = Room.find(params[:id])
   end
-
 end
