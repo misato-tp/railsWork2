@@ -3,7 +3,6 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = current_user.reservations 
-    @rooms = Room.all
   end
 
   def create

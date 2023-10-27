@@ -1,5 +1,6 @@
 class Room < ApplicationRecord
     mount_uploader :image, ImageUploader
+    has_many :reservations
 
     with_options presence: true do
         validates :facility_name

@@ -1,6 +1,7 @@
 class Reservation < ApplicationRecord
     mount_uploader :image, ImageUploader
     belongs_to :user, optional: true
+    belongs_to :room
 
     with_options presence: true do
         validates :start_date
