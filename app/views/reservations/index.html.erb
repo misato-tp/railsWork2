@@ -15,12 +15,12 @@
 
   <tbody>
 
-      <% @reservations.rooms.each do |reservation| %>
+      <% @reservations.each do |reservation| %>
         <tr>
           <td><%= reservation.room.image %></td>
           <td><%= reservation.facility_name %></td>
           <td><%= reservation.detail %></td>
-          <td><%= reservation.total_price %></td>
+          <td>¥<%= reservation.total_price %></td>
           <td><%= reservation.start_date.strftime("%Y/%m/%d") %></td>
           <td><%= reservation.end_date.strftime("%Y/%m/%d") %></td>
           <td><%= reservation.created_at.strftime("%Y/%m/%d") %></td>
