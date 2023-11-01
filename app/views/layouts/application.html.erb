@@ -6,11 +6,47 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <nav class="navbar navbar-dark bg-dark d-grid gap-2 d-md-flex justify-content flex-nowrap">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"><h3>Potepan Share</h3></a>
+      </div>
+
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown" style="list-style: none" >
+          <a class="nav-link dropdown-toggle bg-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+          <%= image_tag current_user.icon.url, class: 'rounded-circle', size:'50x50' %>  
+          <strong><%= current_user.user_name %></strong>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/rooms/new">施設の新規予約</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/reservations">予約済み一覧</a></li>
+            <li><a class="dropdown-item" href="/rooms/own">登録済み一覧</a></li>
+            <li><a class="dropdown-item" href="/users/account" >アカウント設定</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/users/sign_out">ログアウト</a></li>
+          </ul>
+        </li>
+      <% else %>
+        <a href= "/users/sign_in" button type="button" class="text-decoration-none btn btn-outline-light text-nowrap">ログイン</a>
+        <a href= "/users/sign_up" button type="button" class="text-decoration-none btn btn-danger text-nowrap">新規登録</a>
+      <% end %>
+    </nav>
+    </header>
+    
+    <%= render "shared/flash_message" %>
+
     <%= yield %>
+    <footer>
+      <h1>Potepan Share</h1>
+    </footer>
   </body>
 </html>

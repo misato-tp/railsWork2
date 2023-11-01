@@ -1,0 +1,46 @@
+<div class ="top"></div>
+
+    <p class="title text-center">Potepan Shareで<br>まだ体験したことのない<br>旅をしよう</p>
+    <div class="search-box">
+        <div class="input-group">
+        <%= search_form_for @q, url: rooms_path do |f| %>
+            <%= f.label:address_cont,'エリア名を入力'%>
+            <%= f.search_field :address_cont%>
+            <%= f.submit '検索' %>
+        <% end %> 
+        </div>
+    </div>
+    
+    <div class="area">
+        <p class="bg-warning text-white rounded-pill p-5 w-25 h3 text-center">おすすめのエリア</p>
+    </div>
+
+    <div class="search-image">
+        <div class="card">
+            <%= link_to image_tag("tokyo.jpg"),"/rooms?q%5Baddress_cont%5D=東京&commit=検索" %>
+            <div class="card-img d-flex">
+                    <h2 class="card-title">東京</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <%= link_to image_tag("osaka.jpeg"),'/rooms?q%5Baddress_cont%5D=大阪&commit=検索' %>
+            <div class="card-img d-flex">
+                    <h2 class="card-title">大阪</h2>
+            </div>
+        </div>
+
+        <div class="card" >
+            <%= link_to image_tag("kyoto.jpg"), "/rooms?q%5Baddress_cont%5D=京都&commit=検索" %>
+                <div class="card-img d-flex">
+                        <h2 class="card-title">京都</h2>
+                </div>
+        </div>
+
+        <div class="card">
+            <%= link_to image_tag("hokkaido.jpeg"),'/rooms?q%5Baddress_cont%5D=北海道&commit=検索' %>
+                <div class="card-img d-flex">
+                        <h2 class="card-title">北海道</h2>
+                </div>
+        </div>
+    </div>

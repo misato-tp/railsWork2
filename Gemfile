@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
+gem 'rails','= 6.1.3.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
@@ -56,3 +56,13 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'psych','~>3.1'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+gem 'pry-rails'
+gem 'pry-byebug', group: :development
+gem 'ransack'

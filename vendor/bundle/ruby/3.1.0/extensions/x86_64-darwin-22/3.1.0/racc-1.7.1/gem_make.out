@@ -1,0 +1,17 @@
+current directory: /Users/user/Desktop/schedule/railsWork2/trip/vendor/bundle/ruby/3.1.0/gems/racc-1.7.1/ext/racc/cparse
+/Users/user/.rbenv/versions/3.1.4/bin/ruby -I /Users/user/.rbenv/versions/3.1.4/lib/ruby/3.1.0 extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/user/Desktop/schedule/railsWork2/trip/vendor/bundle/ruby/3.1.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230914-52797-5ppwbm sitelibdir\=./.gem.20230914-52797-5ppwbm clean
+
+current directory: /Users/user/Desktop/schedule/railsWork2/trip/vendor/bundle/ruby/3.1.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230914-52797-5ppwbm sitelibdir\=./.gem.20230914-52797-5ppwbm
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/user/Desktop/schedule/railsWork2/trip/vendor/bundle/ruby/3.1.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230914-52797-5ppwbm sitelibdir\=./.gem.20230914-52797-5ppwbm install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20230914-52797-5ppwbm/racc

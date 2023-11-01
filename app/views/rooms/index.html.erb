@@ -1,0 +1,24 @@
+<div class="input-group">
+<%= search_form_for @q, url: rooms_path do |f| %>
+    <%= f.label:address_cont, 'エリア名を入力'%>
+    <%= f.search_field :address_cont %>
+    <%= f.label:detail_cont, 'キーワード名を入力' %>
+    <%= f.search_field :detail_cont %>
+    <%= f.submit '検索' %>
+<% end %> 
+</div>
+
+<%= @rooms.count%>件が見つかりました。
+
+    <% @rooms.each do |room| %>
+        <table>
+            <tr>
+                <td><%= image_tag room.image_url.to_s, size:'200x100' %></td>
+                <td><%= room.facility_name %></td>
+                <td><%= room.address %></td>
+                <td><%= room.detail %></td>
+                <td>¥<%= room.price %>~</td>
+                <td><%= link_to "詳細はこちら",room %></td>
+            </tr>
+        </table>
+    <% end %>

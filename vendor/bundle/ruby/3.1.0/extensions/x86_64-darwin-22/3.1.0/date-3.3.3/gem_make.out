@@ -1,0 +1,21 @@
+current directory: /Users/user/Desktop/schedule/railsWork2/trip/vendor/bundle/ruby/3.1.0/gems/date-3.3.3/ext/date
+/Users/user/.rbenv/versions/3.1.4/bin/ruby -I /Users/user/.rbenv/versions/3.1.4/lib/ruby/3.1.0 extconf.rb
+checking for rb_category_warn()... yes
+checking for timezone in time.h with  -Werror... yes
+checking for altzone in time.h with  -Werror... no
+creating Makefile
+
+current directory: /Users/user/Desktop/schedule/railsWork2/trip/vendor/bundle/ruby/3.1.0/gems/date-3.3.3/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20230914-52797-roblpf sitelibdir\=./.gem.20230914-52797-roblpf clean
+
+current directory: /Users/user/Desktop/schedule/railsWork2/trip/vendor/bundle/ruby/3.1.0/gems/date-3.3.3/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20230914-52797-roblpf sitelibdir\=./.gem.20230914-52797-roblpf
+compiling date_core.c
+compiling date_parse.c
+compiling date_strftime.c
+compiling date_strptime.c
+linking shared-object date_core.bundle
+
+current directory: /Users/user/Desktop/schedule/railsWork2/trip/vendor/bundle/ruby/3.1.0/gems/date-3.3.3/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20230914-52797-roblpf sitelibdir\=./.gem.20230914-52797-roblpf install
+/usr/bin/install -c -m 0755 date_core.bundle ./.gem.20230914-52797-roblpf

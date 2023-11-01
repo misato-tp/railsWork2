@@ -1,0 +1,39 @@
+<h1>新規登録</h1>
+<%= form_with model:@room do |f| %>
+<%= render 'rooms/shared/room_error_messages', model: f.object %>
+    <table>
+        <tr>
+            <th><%= f.label :facility_name, "施設名" %></th> 
+            <td><%= f.text_field :facility_name %></td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :detail, "施設詳細" %></th>
+            <td><%= f.text_area :detail %></td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :price, "料金" %></th>
+            <td><%= f.number_field :price %></td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :address, "住所" %></th>
+            <td><%= f.text_field :address %></td>
+        </tr>
+
+        <tr>
+            <th><%= f.label :image, "画像" %></th>
+            <td><%= f.file_field :image %></td>
+        </tr>
+    </table>
+
+    <%= f.hidden_field:room_id, value:@room.id %>
+    <div>
+        <ul>
+            <li><%= f.submit "保存" %></li>
+            <li><%= link_to "キャンセル", :back %></li>
+        </ul>
+    </div>
+
+<% end %>

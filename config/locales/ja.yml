@@ -1,0 +1,75 @@
+ja:
+  errors:
+    messages:
+      carrierwave_processing_error: 処理できませんでした
+      carrierwave_integrity_error: は許可されていないファイルタイプです
+      carrierwave_download_error: はダウンロードできません
+      extension_whitelist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"
+      extension_blacklist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできないファイルタイプ: %{prohibited_types}"
+      content_type_whitelist_error: "%{content_type}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"
+      content_type_blacklist_error: "%{content_type}ファイルのアップロードは許可されていません"
+      rmagick_processing_error: "rmagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
+      mini_magick_processing_error: "MiniMagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
+      min_size_error: "を%{min_size}以上のサイズにしてください"
+      max_size_error: "を%{max_size}以下のサイズにしてください"
+    time:
+      formats:
+        default:
+  attributes:
+    icon: アイコン
+  activerecord:
+    attributes:
+      room:
+        facility_name: 施設名
+        detail: 施設詳細
+        price: 料金
+        address: 住所
+      reservation:
+        start_date: チェックイン日
+        end_date: チェックアウト日
+        how_many_people: 人数
+    errors:
+      models:
+        reservation:
+          attributes:
+            facility_name:
+              blank: は必須項目です
+            detail:
+              blank: は必須項目です
+            price:
+              not_a_number: は数値を入力してください
+              blank: は必須項目です
+              greater_than_or_equal_to: は1円以上で設定してください
+            address:
+              blank: は必須項目です
+            start_date:
+              blank: を入力してください
+            end_date:
+              blank: を入力してください
+            how_many_people:
+              blank: を入力してください
+              greater_than_or_equal_to: は1人以上にしてください
+              not_a_number: を入力してください
+        user:
+          attributes:
+            current_password:
+              blank: が空欄です
+            password_confirmation:
+              confirmation: が間違っています。
+            password:
+              too_short: が短すぎます。最低6文字入力してください 
+        room:
+          attributes:
+            price:
+              greater_than_or_equal_to: は1円以上にしてください
+              blank: が空欄です
+              not_a_number: は数字を入力してください
+            address:
+              blank: が空欄です
+            facility_name:
+              blank: が空欄です
+            detail:
+              blank: が空欄です             
+
+            
+
