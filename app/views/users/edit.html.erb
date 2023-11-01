@@ -2,8 +2,9 @@
     <div class="border-bottom">
         <h3>プロフィール</h3>
     </div>
+    <%= render 'users/shared/profile_error', obj: @user %>
 
-    <%= form_with model: @user do |f| %>
+    <%= form_with model:@user, url:users_profile_path do |f| %>
         <table>
             <tr>
                 <th><%= f.label :icon, "アイコン画像" %></th>

@@ -50,6 +50,26 @@ ja:
               blank: を入力してください
               greater_than_or_equal_to: は1人以上にしてください
               not_a_number: を入力してください
+        user:
+          attributes:
+            current_password:
+              blank: が空欄です
+            password_confirmation:
+              confirmation: が間違っています。
+            password:
+              too_short: が短すぎます。最低6文字入力してください 
+        room:
+          attributes:
+            price:
+              greater_than_or_equal_to: は1円以上にしてください
+              blank: が空欄です
+              not_a_number: は数字を入力してください
+            address:
+              blank: が空欄です
+            facility_name:
+              blank: が空欄です
+            detail:
+              blank: が空欄です             
 
             
 

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get 'users/account'
     get 'users/profile'
     get 'users/profile/edit', to:'users#edit'
-    post 'users/profile/edit', to:'users#update'
+    patch 'users/profile', to:'users#update'
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'

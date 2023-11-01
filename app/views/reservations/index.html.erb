@@ -14,17 +14,16 @@
   </thead>
 
   <tbody>
-
-      <% @reservations.each do |reservation| %>
         <tr>
-          <td><%= reservation.room.image %></td>
+          <% @reservations.each do |reservation| %>
+          <td><%= image_tag reservation.image.to_s, size:"200x100" %>
           <td><%= reservation.facility_name %></td>
           <td><%= reservation.detail %></td>
           <td>¥<%= reservation.total_price %></td>
           <td><%= reservation.start_date.strftime("%Y/%m/%d") %></td>
           <td><%= reservation.end_date.strftime("%Y/%m/%d") %></td>
-          <td><%= reservation.created_at.strftime("%Y/%m/%d") %></td>
+          <td><%= reservation.created_at.strftime("%Y/%m/%d %H:%M") %></td>
         </tr>
-      <% end %>
+          <% end %>
   </tbody>
 </table>

@@ -5,20 +5,16 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:user_id])
-    if current_user.update(params.permit(:icon, :user_name, :introduce))
+    @user = current_user
+    if @user.update(user_params)
       redirect_to users_profile_path
     else
-      render :edit
+      render 'users/edit'
     end
   end
 
-  def show
-    @users = User.all
-  end
-
   def edit
-    params.permit(:icon, :user_name, :introduce)
+    @user = current_user
   end
 
   def account
@@ -28,4 +24,10 @@ class UsersController < ApplicationController
   def profile
   end
 
+end
+
+private
+
+def user_params
+  params.require(:user).permit(:icon, :user_name, :introduce, :user_id)
 end

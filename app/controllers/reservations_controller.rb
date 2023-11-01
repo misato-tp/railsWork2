@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
       @room = Room.find(params[:reservation][:room_id])
       render "rooms/show"
     else
-      @reservation.total_days = ((@reservation.end_date.day) - (@reservation.start_date.day))
+      @reservation.total_days = ((@reservation.end_date) - (@reservation.start_date))/86400
       @reservation.total_price =((@reservation.price) * (@reservation.how_many_people) * (@reservation.total_days)).to_i
     end
   end
